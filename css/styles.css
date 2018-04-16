@@ -43,9 +43,17 @@ p {
 .contact-name {
    font-weight: bold;
 }
+
+#topHeading {
+  margin: 2em 0;
+}
 @media (min-width: 1024px) {
   h2 {
     text-align: left;
+  }
+  body {
+    width: 90%;
+    margin: auto;
   }
 
   .flex-box {
@@ -69,5 +77,6 @@ p {
 p {
   padding-bottom: .7em;
 }
+
 
 }
