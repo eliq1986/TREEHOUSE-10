@@ -23,6 +23,7 @@ main {
 }
 p {
   margin: 0;
+  word-break: break-all;
 }
 
 .box {
@@ -42,6 +43,30 @@ p {
 
 .contact-name {
    font-weight: bold;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overlflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+.modal-content {
+  background-color: white;
+  margin: 20% auto;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+}
+.closeBtb {
+  float: right;
+  color: gray;
+  font-size: 30px;
 }
 
 #topHeading {
@@ -68,11 +93,11 @@ p {
 
   }
   img {
-    width: 120px;
+    width: 95px;
   }
   .contact-info {
     margin: 1.1em 0 0 1em;
-    width: 100%;
+    width: 90%;
 }
 p {
   padding-bottom: .7em;
