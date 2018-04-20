@@ -55,24 +55,32 @@ $(document).ready(function() {
 }
         for (let i = 0; i<data.results.length; i++) {
               let birthday =  data.results[i].dob.split(" ")[0];
-              console.log(birthday);
-
-      ///      contactBirthday[i].innerHTML = "Birthday" + ":"
-          //  console.log(contactBirthday[i]);
+              let year = birthday.split("-")[0];
+              let month = birthday.split("-")[1];
+              let day = birthday.split("-")[2];
+               let monthDayYear = [ month, day, year].join("/");
+               contactBirthday[i].innerHTML = "Birthday" + ":" + monthDayYear;
 }
    //Opens modal
-   $(".box").on("click", function(event){
-      openModal(event);
+   $(".box").on("click", (event) => {
+      openModal();
+      
    })
 
    closeBtb.addEventListener("click", closeModal);
 
    function openModal(event) {
+       const photoImg = document.getElementsByClassName('photo')[12];
+       const nameContact = document.getElementsByClassName("contact-name")[12];
+       const nameEmail = document.getElementsByClassName('contact-email')[12];
+       const contactCity = document.getElementsByClassName('contact-city')[12];
        modalbirthday.style.display = "block";
        modaladdress.style.display = "block";
        modalborder.style.display = "block";
        modal.style.display = "block";
-       let boxClicked = event.target.textContent;
+
+
+
 
 
 }

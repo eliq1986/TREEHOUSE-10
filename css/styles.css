@@ -83,7 +83,6 @@ p {
 .border, .contact-address, .contact-birthday {
   display: none;
 }
-
 @media (min-width: 1024px) {
   h2 {
     text-align: left;
