@@ -11,6 +11,8 @@ const modal = document.getElementById("simpleModal");
 // Gets close button on modal
 const closeBtb = document.querySelector(".closeBtb");
 
+const main = document.getElementsByClassName('box')[0];
+
 const contactAddress = document.getElementsByClassName("contact-address");
 
 const contactBirthday = document.getElementsByClassName("contact-birthday");
@@ -21,12 +23,15 @@ const modaladdress = document.getElementsByClassName("contact-address")[12];
 
 const modalbirthday = document.getElementsByClassName("contact-birthday")[12];
 
+console.log(main.innerHTML);
+
 $(document).ready(function() {
   $.ajax({
    url: 'https://randomuser.me/api/?results=12&nat=us&inc=name,picture,email,location,cell,dob',
    dataType: 'json',
    success: function(data) {
            console.log(data.results);
+
 
          for (let i =0; i<data.results.length; i++) {
 
@@ -62,14 +67,16 @@ $(document).ready(function() {
                contactBirthday[i].innerHTML = "Birthday" + ":" + monthDayYear;
 }
    //Opens modal
-   $(".box").on("click", (event) => {
-      openModal();
-      
+   $(".box").on("click",(event) => {
+     event.preventDefault();
+      openModal(event);
+
    })
 
    closeBtb.addEventListener("click", closeModal);
 
    function openModal(event) {
+
        const photoImg = document.getElementsByClassName('photo')[12];
        const nameContact = document.getElementsByClassName("contact-name")[12];
        const nameEmail = document.getElementsByClassName('contact-email')[12];
