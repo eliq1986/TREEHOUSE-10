@@ -11,8 +11,6 @@ const modal = document.getElementById("simpleModal");
 // Gets close button on modal
 const closeBtb = document.querySelector(".closeBtb");
 
-
-
 const contactAddress = document.getElementsByClassName("contact-address");
 
 const contactBirthday = document.getElementsByClassName("contact-birthday");
@@ -67,21 +65,20 @@ $(document).ready(function() {
                contactBirthday[i].innerHTML = "Birthday" + ":" + monthDayYear;
 }
    //Opens modal
-   $(".box").on("click",(event) => {
-     event.preventDefault();
+   $(".box").on("click", function (event) {
+         event.preventDefault();
         const main = document.getElementsByClassName('box');
          for (let i = 0; i<main.length; i++) {
-        if (event.target.parentNode.parentNode === main[i] || event.target === main[i]) {
-          console.log(main[i]);
-         }
-
-      openModal(event);
-
+            if (event.target.parentNode.parentNode === main[i] || event.target === main[i]) {
+               let clickedBox = main[i];
+               openModal(clickedBox);
+ }
 }
    })
 
-   function openModal(event) {
-
+   function openModal(box) {
+       let clickedBox = box;
+       console.log(clickedBox);
        const photoImg = document.getElementsByClassName('photo')[12];
        const nameContact = document.getElementsByClassName("contact-name")[12];
        const nameEmail = document.getElementsByClassName('contact-email')[12];
