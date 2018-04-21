@@ -11,7 +11,7 @@ const modal = document.getElementById("simpleModal");
 // Gets close button on modal
 const closeBtb = document.querySelector(".closeBtb");
 
-const main = document.getElementsByClassName('box')[0];
+
 
 const contactAddress = document.getElementsByClassName("contact-address");
 
@@ -23,14 +23,14 @@ const modaladdress = document.getElementsByClassName("contact-address")[12];
 
 const modalbirthday = document.getElementsByClassName("contact-birthday")[12];
 
-console.log(main.innerHTML);
 
 $(document).ready(function() {
   $.ajax({
    url: 'https://randomuser.me/api/?results=12&nat=us&inc=name,picture,email,location,cell,dob',
    dataType: 'json',
    success: function(data) {
-           console.log(data.results);
+           let randomUsers = data;
+           console.log(randomUsers);
 
 
          for (let i =0; i<data.results.length; i++) {
@@ -69,11 +69,16 @@ $(document).ready(function() {
    //Opens modal
    $(".box").on("click",(event) => {
      event.preventDefault();
+        const main = document.getElementsByClassName('box');
+         for (let i = 0; i<main.length; i++) {
+        if (event.target.parentNode.parentNode === main[i] || event.target === main[i]) {
+          console.log(main[i]);
+         }
+
       openModal(event);
 
+}
    })
-
-   closeBtb.addEventListener("click", closeModal);
 
    function openModal(event) {
 
@@ -86,10 +91,7 @@ $(document).ready(function() {
        modalborder.style.display = "block";
        modal.style.display = "block";
 
-
-
-
-
+       closeBtb.addEventListener("click", closeModal);
 }
    function closeModal() {
       modal.style.display = "none";
