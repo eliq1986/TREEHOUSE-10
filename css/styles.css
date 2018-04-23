@@ -80,7 +80,7 @@ p {
 .closeBtb:hover , .box:hover{
   cursor: pointer;
 }
-.border, .contact-address, .contact-birthday {
+.border, .contact-address, .contact-birthday, .phone {
   display: none;
 }
 @media (min-width: 1024px) {
