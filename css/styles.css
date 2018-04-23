@@ -35,15 +35,33 @@ p {
     display: flex;
     width: 90%;
     justify-content: flex-start;
+    transition: .3s;
 
 }
 .contact-info {
     margin-left: 2em;
+
 }
 
 .contact-name {
    font-weight: bold;
+
 }
+.border  {
+  border-top: 1px solid #a8a8a8;
+}
+
+ .contact-email, .contact-city,
+  .phone, .contact-address, .contact-birthday {
+   color: #a8a8a8;
+   font-weight: 300;
+   font-size: .9em;
+
+}
+.contact-city, .contact-address {
+  text-transform: capitalize;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -60,18 +78,37 @@ p {
   background-color: white;
   margin: 20% auto;
   padding: 20px;
-  width: 35%;
+  width: 25%;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
   text-align: center;
-  border-radius: 1em;
+  border-radius: .3em;
 }
 .closeBtb {
   float: right;
-  color: gray;
   font-size: 20px;
 
 
 }
+.modal-content .photo  {
+  margin: .5em 0;
+}
+.modal-content .contact-city {
+  margin-bottom: 1em;
+}
+.modal-content .phone {
+  margin-top: 2em;
+  margin-bottom: : 1em;
+}
+.modal-content .contact-address, .modal-content .contact-birthday {
+  margin: .8em 0;
+
+}
+.box:hover {
+  border: 2px solid  #6B5B95;
+  transition-timing-function: ease-in-out;
+  transform: rotate(5deg);
+}
+
 
 #topHeading {
   margin: 2em 0;
@@ -104,11 +141,15 @@ p {
 
   }
   img {
+
     width: 95px;
+
   }
   .contact-info {
     margin: 1.1em 0 0 1em;
     width: 90%;
+
+
 }
 p {
   padding-bottom: .7em;

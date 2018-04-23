@@ -27,7 +27,9 @@ const modalbirthday = document.getElementsByClassName("contact-birthday")[12];
 
 const modalPhone = document.getElementsByClassName("phone")[12];
 
-
+//********************************************************//
+// Makes JSON CALL
+//********************************************************//
 
 $(document).ready(function() {
   $.ajax({
@@ -35,7 +37,6 @@ $(document).ready(function() {
    dataType: 'json',
    success: function(data) {
            let randomUsers = data;
-         console.log(data.results[0].cell);
 //********************************************************//
 // Interates through JSON DATA and adds to boxes
 //********************************************************//
@@ -78,8 +79,7 @@ $(document).ready(function() {
               let month = birthday.split("-")[1];
               let day = birthday.split("-")[2];
                let monthDayYear = [ month, day, year].join("/");
-               contactBirthday[i].innerHTML = "Birthday" + ":" + monthDayYear;
-
+               contactBirthday[i].innerHTML = "Birthday " + " : " + monthDayYear;
 }
 //********************************************************//
 // Opens Modal
@@ -90,7 +90,7 @@ $(document).ready(function() {
          for (let i = 0; i<main.length; i++) {
             if (event.target.parentNode.parentNode === main[i] || event.target === main[i]) {
                let clickedBox = main[i];
-               openModal(clickedBox);
+                              openModal(clickedBox);
  }
 }
    })
@@ -101,8 +101,6 @@ $(document).ready(function() {
          modalbirthday.style.display = "block";
          modaladdress.style.display = "block";
          modalborder.style.display = "block";
-
-
 
        let clickedBox = box;
 
